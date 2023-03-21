@@ -10,6 +10,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        darkBg: "#121212",
+        primaryText: "#E8E8E8",
+      },
       fontFamily: {
         hina: ["Hina Mincho", "serif"],
       },

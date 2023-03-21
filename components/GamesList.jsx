@@ -20,26 +20,27 @@ const GamesList = () => {
   }, []);
 
   return (
-    <section className="flex flex-col w-11/12 py-6 m-auto text-4xl">
-      {games &&
-        games.map((game, index) => (
-          <div
-            className="relative flex items-center content-center justify-start h-full border-t "
-            key={game.gameName + index}
-          >
-            <h2 className="relative z-10 flex items-center w-full h-full px-4 py-8 text-3xl bg-black font-hina bg-opacity-60 ">
-              <Link href={"/bloodborne"}>{game.gameName}</Link>
-            </h2>
-            <div className="">
+    <section className="w-screen py-6 m-auto text-4xl bg-darkBg">
+      <div className="flex flex-col w-11/12 gap-4 m-auto">
+        {games &&
+          games.map((game, index) => (
+            <div
+              className="relative flex items-center content-center justify-center "
+              key={game.gameName + index}
+            >
+              <h2 className="relative z-10 w-full px-4 py-8 text-4xl text-center bg-black rounded-xl font-hina bg-opacity-60">
+                <Link href={"/" + game.urlLink}>{game.gameName}</Link>
+              </h2>
+
               <Image
                 src={game.coverArt}
                 alt={game.gameName + " cover image"}
                 fill
-                className="z-0 object-cover"
+                className="z-0 object-cover rounded-xl"
               ></Image>
             </div>
-          </div>
-        ))}
+          ))}
+      </div>
     </section>
   );
 };
